@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+
+
+/* Utility Classes */
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #2c2c2c;
+}
+
+a:hover {
+    color: blue;
+}
+
+
+/* Header */
+
+.header {
+    width: 100%;
+    min-height: 60px;
+    background-color: #ccc;
+}
+
+
+/* nabar */
+
+.nabar {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #2c2c2c;
+}
+
+
+/* menu */
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu li {
+    padding: 1rem;
+}
+
+.menu li:hover {
+    background-color: #eee;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #ccc;
+    color: #2c2c2c;
+    width: 100%;
+    min-height: 60px;
+    padding: 1rem;
+    text-align: center;
+}
