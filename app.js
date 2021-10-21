@@ -6,6 +6,8 @@ const app = express()
 const firstPost = "This is the first post in my blog"
 const aboutContent="This is our About. - We are creative and inspiring"
 const contactContent="Contact us via mail and slack"
+let postTitle=""
+let postContent=""
 
 // Public Folder
 app.use(express.static("public"))
@@ -21,7 +23,7 @@ app.set("view engine", "ejs")
 
 // Home 
 app.get("/", function(req, res) {
-    res.render("home.ejs", { firstPost: firstPost })
+    res.render("home.ejs", { firstPost: firstPost, postTitle:postTitle, postContent:postContent })
 })
 // About
 app.get("/about", function(req, res){
@@ -31,6 +33,18 @@ app.get("/about", function(req, res){
 // Contact
 app.get("/contact", function(req, res){
     res.render("contact.ejs", {contactContent:contactContent})
+})
+// Compose - GET
+app.get("/compose", function(req, res){
+    res.render("compose.ejs")
+})
+// Compose - POST
+app.post("/compose", function(req, res){
+postTitle = req.body.title
+postContent=req.body.content
+ console.log(postTitle)
+ console.log(postContent)
+ res.redirect("/")
 })
 
 // STARTING THE SERVER

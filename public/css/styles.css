@@ -27,7 +27,17 @@ a:hover {
 .container{
     padding: 1rem;
 }
-
+button{
+    padding: 0.5rem 1rem;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+button:hover{
+    text-transform: uppercase;
+}
 
 /* Header */
 
@@ -63,7 +73,27 @@ a:hover {
 .menu li:hover {
     background-color: #eee;
 }
-
+/* Post form */
+form.post-form{
+    padding: 1rem;
+    width: 35rem;
+    margin: auto;
+}
+input, textarea{
+  display: inline-block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 1rem;
+}
+input:hover, textarea:hover{
+    background-color: #eee;
+}
+form div, form button{
+    margin: 0.5rem 1rem;
+}
+label{
+    font-weight: bold;
+}
 
 /* Footer */
 
