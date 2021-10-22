@@ -6,8 +6,7 @@ const app = express()
 const firstPost = "This is the first post in my blog"
 const aboutContent="This is our About. - We are creative and inspiring"
 const contactContent="Contact us via mail and slack"
-let postTitle=""
-let postContent=""
+const posts = []
 
 // Public Folder
 app.use(express.static("public"))
@@ -23,7 +22,7 @@ app.set("view engine", "ejs")
 
 // Home 
 app.get("/", function(req, res) {
-    res.render("home.ejs", { firstPost: firstPost, postTitle:postTitle, postContent:postContent })
+    res.render("home.ejs", { firstPost: firstPost, posts:posts})
 })
 // About
 app.get("/about", function(req, res){
@@ -40,10 +39,11 @@ app.get("/compose", function(req, res){
 })
 // Compose - POST
 app.post("/compose", function(req, res){
-postTitle = req.body.title
-postContent=req.body.content
- console.log(postTitle)
- console.log(postContent)
+    const post={
+        title:req.body.title,
+        content:req.body.content
+    }
+posts.push(post)
  res.redirect("/")
 })
 
