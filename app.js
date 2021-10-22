@@ -47,6 +47,8 @@ posts.push(post)
  res.redirect("/")
 })
 
+
+
 // STARTING THE SERVER
 
 const PORT = 3000 | process.env.PORT
