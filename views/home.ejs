@@ -5,7 +5,10 @@
     <p> <%= firstPost %> </p>
     <%  for (let i=0; i<posts.length; i++){ %>
           <h2> <%= posts[i].title %> </h2>
-          <p> <%= posts[i].content %> </p>
+          <p>
+               <%= posts[i].content.substring(0,100) + "... " %> 
+               <a href="/posts/<%= posts[i].title %>" class="read-more"> Read More </a>
+        </p>
           <% } %>
     </div>
 

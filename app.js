@@ -55,13 +55,14 @@ app.get("/posts/:title", function(req, res){
    const postTitle= lodash.lowerCase(req.params.title)
   posts.forEach(function(post){
     if(post.title===postTitle){
-    console.log("Match Found")
+    
     res.render("post.ejs", {
         title:post.title,
         content:post.content
     })
 }else{
-    console.log("Not Found")
+   res.render("404.ejs")
+  
 }
   })
 })

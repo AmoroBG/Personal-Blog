@@ -29,6 +29,12 @@ a {
 a:hover {
     color: blue;
 }
+a.read-more{
+    color: blue;
+}
+a.read-more:hover{
+    color: purple;
+}
 .container{
     padding: 1rem;
 }
@@ -98,6 +104,21 @@ form div, form button{
 }
 label{
     font-weight: bold;
+}
+
+/* 404 Page - four-o-four */
+.post-not-found{
+    width: 100%;
+    font-size: 3rem;
+   text-align: center;
+   background-color: peachpuff;
+   overflow: hidden;
+   padding: 5rem;
+}
+.post-not-found h1{
+    margin: 2rem;
+    padding: 2rem;
+    border-bottom: 2px dashed gray;
 }
 
 /* Footer */
