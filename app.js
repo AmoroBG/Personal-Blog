@@ -1,4 +1,6 @@
 const express = require("express")
+const lodash=require("lodash")
+
 
 const app = express()
 
@@ -10,6 +12,7 @@ const posts = []
 
 // Public Folder
 app.use(express.static("public"))
+// app.use(express.static(__dirname + '/public'));
 
 // body-parser
 app.use(express.json())
@@ -47,6 +50,21 @@ posts.push(post)
  res.redirect("/")
 })
 
+app.get("/posts/:title", function(req, res){
+    // convert the parameter entered to lower case using lodash
+   const postTitle= lodash.lowerCase(req.params.title)
+  posts.forEach(function(post){
+    if(post.title===postTitle){
+    console.log("Match Found")
+    res.render("post.ejs", {
+        title:post.title,
+        content:post.content
+    })
+}else{
+    console.log("Not Found")
+}
+  })
+})
 
 
 // STARTING THE SERVER
